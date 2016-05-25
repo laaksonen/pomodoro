@@ -1,0 +1,11 @@
+.idea
+*.iml
+*.log
+*.map
+.DS_Store
+coverage
+*.pid
+*.seed
+*.env
+node_modules
+dist

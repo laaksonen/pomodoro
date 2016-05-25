@@ -1,0 +1,63 @@
+{
+  "parserOptions": {,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true,
+      "experimentalObjectRestSpread": true
+    }
+  },
+
+  "env": {
+    "browser": true,
+    "es6": true,
+    "jquery": true,
+    "node": true
+  },
+
+  "plugins": [
+    "react"
+  ],
+
+  "rules": {
+    "arrow-spacing": 2,
+    "block-spacing": [2, "always"],
+    "camelcase": [2, {"properties": "always"}],
+    "comma-dangle": [2, "always-multiline"],
+    "comma-spacing": [2, {"before": false, "after": true}],
+    "constructor-super": 2,
+    "dot-location": [2, "property"],
+    "eol-last": 2,
+    "eqeqeq": 2,
+    "indent": [2, 2],
+    "no-const-assign": 2,
+    "no-empty": 2,
+    "no-extra-semi": 2,
+    "no-inline-comments": 2,
+    "no-new-object": 2,
+    "no-multi-spaces": 2,
+    "no-sparse-arrays": 2,
+    "no-trailing-spaces": [2, { "skipBlankLines": true }],
+    "no-unexpected-multiline": 2,
+    "no-unreachable": 2,
+    "object-curly-spacing": [2, "always"],
+    "prefer-const": 2,
+    "prefer-template": 2,
+    "radix": 2,
+    "semi": 2,
+    "keyword-spacing": 2,
+    "space-before-function-paren": [2, { "anonymous": "always", "named": "never" }],
+    "space-in-parens": [2, "never"],
+    "quotes": [2, "single"],
+    jsx-quotes: [2, "prefer-double"],
+
+    "react/prefer-es6-class": [1, "always"],
+    "react/wrap-multilines": [1],
+    "react/self-closing-comp": [1],
+    "react/jsx-pascal-case": [1],
+    "react/jsx-space-before-closing": [1, "always"],
+    "react/jsx-closing-bracket-location": [1, 'tag-aligned'],
+    "react/jsx-equals-spacing": [1, "never"],
+    "react/jsx-curly-spacing": [1, "never"],
+    "react/jsx-boolean-value": [1, "never"]
+  }
+}

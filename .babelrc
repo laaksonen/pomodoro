@@ -1,0 +1,17 @@
+// NOTE: These options are overriden by the babel-loader configuration
+
+// Why? The react-transform-hmr plugin depends on HMR (and throws if
+// module.hot is disabled), so keeping it and related plugins contained
+// within webpack helps prevent unexpected errors.
+
+{
+  "presets": ["react", "es2015", "stage-0"],
+  "env": {
+    "development": {
+      "presets": ["react-hmre"]
+    },
+    "production": {
+      "presets": ["react-optimize"]
+    }
+  }
+}

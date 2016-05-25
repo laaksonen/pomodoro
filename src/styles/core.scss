@@ -1,0 +1,47 @@
+@import 'variables';
+@import 'vendor/normalize';
+@import 'buttons';
+
+// Best-practice CSS
+
+*,
+*:before,
+*:after {
+  box-sizing: border box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.site-container {
+  position: absolute; top: 0; left: 0; height: 100%; width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #fff;
+}
+
+.bg-red {
+  background: #f06060;
+}
+
+.bg-blue {
+  background: #4593E3;
+}
+
+.bg-green {
+  background: #2AC56C;
+}
+
+.navigation, .footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.site-content {
+  text-align: center;
+}
