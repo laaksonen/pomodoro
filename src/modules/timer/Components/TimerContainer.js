@@ -10,6 +10,7 @@ import {
   pauseTimer,
   resumeTimer,
   exitTimer,
+  deactivateTimer,
  } from '../../timer/timer';
 
 class TimerContainer extends Component {
@@ -26,16 +27,23 @@ class TimerContainer extends Component {
 
     const timeInterval = setInterval(() => {
 
-      if (!this.props.isPaused && this.props.currentTime > 0) {
-        this.props.tick();
-      } else if (this.props.isPaused) {
+      if (this.props.timerType === 'none') {
+        this.props.deactivateTimer();
+        clearInterval(timeInterval);
+        return;
+      }
+      if (this.props.isPaused) {
         this.props.pauseTimer();
         clearInterval(timeInterval);
-      } else if (this.props.timerType === 'none') {
-        clearInterval(timeInterval);
+        return;
+      }
+
+      if (this.props.currentTime > 0) {
+        this.props.tick();
       } else {
-        clearInterval(timeInterval);
         this.props.timerDone(timerType);
+        clearInterval(timeInterval);
+        return;
       }
     }, 1000);
   }
@@ -44,16 +52,23 @@ class TimerContainer extends Component {
     this.props.resumeTimer();
 
     const timeInterval = setInterval(() => {
-      if (!this.props.isPaused && this.props.currentTime > 0) {
-        this.props.tick();
-      } else if (this.props.isPaused) {
+      if (this.props.timerType === 'none') {
+        this.props.deactivateTimer();
+        clearInterval(timeInterval);
+        return;
+      }
+      if (this.props.isPaused) {
         this.props.pauseTimer();
         clearInterval(timeInterval);
-      } else if (this.props.timerType === 'none') {
-        clearInterval(timeInterval);
+        return;
+      }
+
+      if (this.props.currentTime > 0) {
+        this.props.tick();
       } else {
-        clearInterval(timeInterval);
         this.props.timerDone(this.props.timerType);
+        clearInterval(timeInterval);
+        return;
       }
     }, 1000);
   }
@@ -66,7 +81,10 @@ class TimerContainer extends Component {
           <Timer currentTime={this.props.currentTime} />
         }
         {this.props.timerType === 'none' ?
-          <TimerSelection startTimer={this.startTimer} /> :
+          <TimerSelection
+            startTimer={this.startTimer}
+            isActive={this.props.isActive}
+          /> :
           <TimerControls
             timerType={this.props.timerType}
             isPaused={this.props.isPaused}
@@ -84,6 +102,7 @@ const mapStateToProps = (state) => {
   return {
     currentTime: state.timer.currentTime,
     timerType: state.timer.timerType,
+    isActive: state.timer.isActive,
     isPaused: state.timer.isPaused,
     pomodoro: state.settings.pomodoroDuration,
     shortBreak: state.settings.shortBreakDuration,
@@ -98,4 +117,5 @@ export default connect(mapStateToProps, {
   pauseTimer,
   resumeTimer,
   exitTimer,
+  deactivateTimer,
 })(TimerContainer);

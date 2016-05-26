@@ -4,10 +4,12 @@ export const TIMER_DONE = 'TIMER_DONE';
 export const PAUSE_TIMER = 'PAUSE_TIMER';
 export const RESUME_TIMER = 'RESUME_TIMER';
 export const EXIT_TIMER = 'EXIT_TIMER';
+export const DEACTIVE_TIMER = 'DEACTIVE_TIMER';
 
 const initialState = {
   timerType: 'none',
   currentTime: 0,
+  isActive: false,
   isPaused: false,
   completedCount: 0,
 };
@@ -19,6 +21,7 @@ export default function reducer(state = initialState, action) {
       ...state,
       timerType: action.payload.timerType,
       currentTime: action.payload.duration * 60,
+      isActive: true,
     };
   case TICK:
     return { ...state, currentTime: state.currentTime - 1 };
@@ -40,7 +43,9 @@ export default function reducer(state = initialState, action) {
       currentTime: 0,
       isPaused: false,
     };
-  
+  case DEACTIVE_TIMER:
+    return { ...state, isActive: false };
+
   }
   return state;
 }
@@ -76,4 +81,8 @@ export function resumeTimer() {
 
 export function exitTimer() {
   return { type: EXIT_TIMER };
+}
+
+export function deactivateTimer() {
+  return { type: DEACTIVE_TIMER };
 }

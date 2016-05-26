@@ -1,12 +1,16 @@
 import React from 'react';
 
-export default function TimerSelection({ timerType, startTimer }) {
+export default function TimerSelection({ startTimer, isActive }) {
   return (
     <div>
       <div className="ma3">
         <button
           className="btn btn-raised-red"
-          onClick={() => { startTimer('pomodoro'); }}
+          onClick={() => {
+            if (!isActive) {
+              startTimer('pomodoro');
+            }
+          }}
         >
           Pomodoro
         </button>
@@ -15,7 +19,11 @@ export default function TimerSelection({ timerType, startTimer }) {
       <div className="ma3">
         <button
           className="btn btn-raised-red"
-          onClick={() => { startTimer('shortBreak'); }}
+          onClick={() => {
+            if (!isActive) {
+              startTimer('shortBreak');
+            }
+          }}
         >
           Short break
         </button>
@@ -24,7 +32,11 @@ export default function TimerSelection({ timerType, startTimer }) {
       <div className="ma3">
         <button
           className="btn btn-raised-red"
-          onClick={() => { startTimer('longBreak'); }}
+          onClick={() => {
+            if (!isActive) {
+              startTimer('longBreak');
+            }
+          }}
         >
           Long break
         </button>

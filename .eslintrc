@@ -21,6 +21,7 @@
   "rules": {
     "arrow-spacing": 2,
     "block-spacing": [2, "always"],
+    "brace-style": 2,
     "camelcase": [2, {"properties": "always"}],
     "comma-dangle": [2, "always-multiline"],
     "comma-spacing": [2, {"before": false, "after": true}],
