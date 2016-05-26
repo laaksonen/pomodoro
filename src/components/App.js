@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import classNames from 'classnames';
 import Navigation from './Navigation';
+import SettingsContainer from '../modules/settings/Containers/SettingsContainer.js';
 import Footer from './Footer';
 
 class App extends Component {
@@ -19,6 +20,7 @@ class App extends Component {
       <div className={containerClass}>
         <Navigation timerType={timerType} />
         {this.props.children}
+        <SettingsContainer />
         <Footer />
       </div>
     );

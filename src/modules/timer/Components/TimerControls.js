@@ -23,7 +23,6 @@ export default function TimerControls({
           <button
             className={buttonClass}
             onClick={() => {
-              console.log(isActive);
               if (!isActive) {
                 restartTimer();
               }

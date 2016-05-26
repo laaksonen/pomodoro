@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import CompletedCount from '../modules/timer/Components/CompletedCount';
-import TimerSettings from '../modules/timer/Components/TimerSettings';
+import SettingsButton from '../modules/settings/Containers/SettingsButton';
 
 export default class Footer extends Component {
   render() {
     return (
       <div className="footer pa3 f4">
         <CompletedCount />
-        <TimerSettings />
+        <SettingsButton />
       </div>
     );
   }
