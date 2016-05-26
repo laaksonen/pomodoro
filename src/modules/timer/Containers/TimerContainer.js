@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import Timer from './Timer';
-import TimerSelection from './TimerSelection';
-import TimerControls from './TimerControls';
+import Timer from '../Components/Timer';
+import TimerSelection from '../Components/TimerSelection';
+import TimerControls from '../Components/TimerControls';
 import {
   initializeTimer,
   tick,
@@ -11,7 +11,7 @@ import {
   resumeTimer,
   exitTimer,
   deactivateTimer,
- } from '../../timer/timer';
+} from '../timer';
 
 class TimerContainer extends Component {
   constructor() {

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import CompletedCount from '../modules/timer/Components/CompletedCount';
+import CompletedCount from '../modules/timer/Containers/CompletedCount';
 import SettingsButton from '../modules/settings/Containers/SettingsButton';
 
 export default class Footer extends Component {

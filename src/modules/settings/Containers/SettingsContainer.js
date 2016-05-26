@@ -18,8 +18,8 @@ export default function SettingsContainer({
       <div className="settings-panel">
         <div className="settings-panel-close">
             <span onClick={() => toggleSettingsPanel()}>×</span>
-
         </div>
+
         <ToggleContainer />
         <span className="settings-divider" />
       </div>
