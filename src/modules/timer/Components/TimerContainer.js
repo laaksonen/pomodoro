@@ -34,6 +34,7 @@ class TimerContainer extends Component {
       }
       if (this.props.isPaused) {
         this.props.pauseTimer();
+        this.props.deactivateTimer();
         clearInterval(timeInterval);
         return;
       }
@@ -59,6 +60,7 @@ class TimerContainer extends Component {
       }
       if (this.props.isPaused) {
         this.props.pauseTimer();
+        this.props.deactivateTimer();
         clearInterval(timeInterval);
         return;
       }
@@ -88,6 +90,7 @@ class TimerContainer extends Component {
           <TimerControls
             timerType={this.props.timerType}
             isPaused={this.props.isPaused}
+            isActive={this.props.isActive}
             pauseTimer={this.props.pauseTimer}
             restartTimer={this.restartTimer}
             exitTimer={this.props.exitTimer}

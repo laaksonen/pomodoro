@@ -3,6 +3,7 @@ import classNames from 'classnames';
 
 export default function TimerControls({
   timerType,
+  isActive,
   isPaused,
   pauseTimer,
   restartTimer,
@@ -21,7 +22,12 @@ export default function TimerControls({
         {isPaused ?
           <button
             className={buttonClass}
-            onClick={() => restartTimer()}
+            onClick={() => {
+              console.log(isActive);
+              if (!isActive) {
+                restartTimer();
+              }
+            }}
           >
             Resume
           </button> :

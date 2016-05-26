@@ -35,7 +35,7 @@ export default function reducer(state = initialState, action) {
   case PAUSE_TIMER:
     return { ...state, isPaused: true };
   case RESUME_TIMER:
-    return { ...state, isPaused: false };
+    return { ...state, isActive: true, isPaused: false };
   case EXIT_TIMER:
     return {
       ...state,
