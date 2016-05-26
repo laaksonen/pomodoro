@@ -49,6 +49,8 @@ class TimerContainer extends Component {
       } else if (this.props.isPaused) {
         this.props.pauseTimer();
         clearInterval(timeInterval);
+      } else if (this.props.timerType === 'none') {
+        clearInterval(timeInterval);
       } else {
         clearInterval(timeInterval);
         this.props.timerDone(this.props.timerType);
@@ -59,7 +61,10 @@ class TimerContainer extends Component {
   render() {
     return (
       <div>
-        <Timer currentTime={this.props.currentTime} />
+        {this.props.timerType === 'none' ?
+          null :
+          <Timer currentTime={this.props.currentTime} />
+        }
         {this.props.timerType === 'none' ?
           <TimerSelection startTimer={this.startTimer} /> :
           <TimerControls
