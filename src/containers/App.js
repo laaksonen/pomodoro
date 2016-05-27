@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import classNames from 'classnames';
-import Navigation from './Navigation';
+import Navigation from '../components/Navigation';
 import TimerContainer from '../modules/timer/Containers/TimerContainer';
 import SettingsContainer from '../modules/settings/Containers/SettingsContainer';
-import Footer from './Footer';
+import Footer from '../components/Footer';
 import { toggleDesktopNotification } from '../modules/settings/settings';
 
 class App extends Component {

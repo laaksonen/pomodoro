@@ -30,7 +30,6 @@ function SelectContainer({ soundOption, setSoundOption, notificationVolume }) {
           }
         }}
       />
-
     </div>
   );
 }

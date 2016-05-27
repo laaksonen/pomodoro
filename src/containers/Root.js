@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Provider } from 'react-redux';
-import { Router } from 'react-router';
+import App from './App';
 
 // if (process.env.BROWSER) {
 require('../styles/core.scss');
@@ -12,7 +12,7 @@ export default class Root extends Component {
     return (
       <Provider store={store}>
         <div>
-          <Router history={history}>{routes}</Router>
+          <App />
         </div>
       </Provider>
     );
