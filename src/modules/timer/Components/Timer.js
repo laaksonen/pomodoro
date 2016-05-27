@@ -1,5 +1,5 @@
 import React from 'react';
-import { zeroPad } from '../../../utils';
+import { zeroPad } from '../utils';
 
 export default function Timer({ currentTime }) {
   const minutes = Math.floor(currentTime / 60);

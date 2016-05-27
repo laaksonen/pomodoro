@@ -12,6 +12,7 @@ import {
   exitTimer,
   deactivateTimer,
 } from '../timer';
+import { notify } from '../utils/notification';
 
 class TimerContainer extends Component {
   constructor() {
@@ -43,6 +44,13 @@ class TimerContainer extends Component {
         this.props.tick();
       } else {
         this.props.timerDone(timerType);
+        if (timerType === 'pomodoro' && this.props.desktopNotification) {
+          notify('Pomodoro session complete.');
+        } else if (timerType === 'shortBreak' && this.props.desktopNotification) {
+          notify('Short break ended.');
+        } else if (timerType === 'longBreak' && this.props.deskTopNotification) {
+          notify('Long break ended.');
+        }
         clearInterval(timeInterval);
         return;
       }
@@ -107,6 +115,7 @@ const mapStateToProps = (state) => {
     timerType: state.timer.timerType,
     isActive: state.timer.isActive,
     isPaused: state.timer.isPaused,
+    desktopNotification: state.settings.desktopNotification,
     pomodoro: state.settings.pomodoroDuration,
     shortBreak: state.settings.shortBreakDuration,
     longBreak: state.settings.longBreakDuration,

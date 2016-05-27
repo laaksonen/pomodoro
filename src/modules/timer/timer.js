@@ -29,6 +29,7 @@ export default function reducer(state = initialState, action) {
     return {
       ...state,
       timerType: 'none',
+      isActive: false,
       completedCount: action.payload === 'pomodoro' ? state.completedCount + 1 :
       state.completedCount,
     };
