@@ -1,9 +1,19 @@
 import timeIcon from '../../../static/time.png';
-import alert1 from '../../../static/alert1.mp3';
+import endingReached from '../../../static/ending-reached.mp3';
+import hellYeah from '../../../static/hell-yeah.mp3';
+import theLittleDwarf from '../../../static/the-little-dwarf.mp3';
+import coins from '../../../static/coins.mp3';
+import solemn from '../../../static/solemn.mp3';
+import fromTheDarkSide from '../../../static/from-the-dark-side.mp3';
 
 export function playSound(soundOption) {
   const options = {
-    option1: alert1,
+    endingReached,
+    hellYeah,
+    theLittleDwarf,
+    coins,
+    solemn,
+    fromTheDarkSide,
   };
 
   document.getElementById('sound')

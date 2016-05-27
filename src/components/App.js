@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import classNames from 'classnames';
 import Navigation from './Navigation';
-import SettingsContainer from '../modules/settings/Containers/SettingsContainer.js';
+import TimerContainer from '../modules/timer/Containers/TimerContainer';
+import SettingsContainer from '../modules/settings/Containers/SettingsContainer';
 import Footer from './Footer';
 import { toggleDesktopNotification } from '../modules/settings/settings';
 
@@ -13,14 +14,10 @@ class App extends Component {
         this.props.toggleDesktopNotification();
       }
     });
-
-
   }
-
 
   render() {
     const { timerType } = this.props;
-
 
     const containerClass = classNames({
       'site-container bg-red':
@@ -32,7 +29,9 @@ class App extends Component {
     return (
       <div className={containerClass}>
         <Navigation timerType={timerType} />
-        {this.props.children}
+        <div className="site-content">
+          <TimerContainer />
+        </div>
         <SettingsContainer />
         <Footer />
       </div>

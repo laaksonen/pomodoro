@@ -3,9 +3,8 @@ import { connect } from 'react-redux';
 import classNames from 'classnames';
 import { toggleSettingsPanel } from '../settings';
 import ToggleContainer from './ToggleContainer';
+import SelectContainer from './SelectContainer';
 import SliderContainer from './SliderContainer';
-import ReactRangeSlider from 'react-rangeslider';
-import ReactSlider from 'react-slider';
 
 export default function SettingsContainer({
   settingsPanelOpen,
@@ -23,6 +22,8 @@ export default function SettingsContainer({
             <span onClick={() => toggleSettingsPanel()}>×</span>
         </div>
         <ToggleContainer />
+        <br />
+        <SelectContainer />
         <br />
         <SliderContainer />
       </div>

@@ -9,7 +9,7 @@ const initialState = {
   settingsPanelOpen: false,
   desktopNotification: false,
   notificationSound: true,
-  soundOption: 'option1',
+  soundOption: 'endingReached',
   pomodoroDuration: 25,
   shortBreakDuration: 5,
   longBreakDuration: 10,
