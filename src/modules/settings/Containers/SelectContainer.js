@@ -4,7 +4,7 @@ import Select from 'react-select';
 import { setSoundOption } from '../settings';
 import { playSound } from '../../timer/utils/notification';
 
-function SelectContainer({ soundOption, setSoundOption }) {
+function SelectContainer({ soundOption, setSoundOption, notificationVolume }) {
   const options = [
     { value: 'endingReached', label: 'Ending Reached' },
     { value: 'hellYeah', label: 'Hell Yeah' },
@@ -26,7 +26,7 @@ function SelectContainer({ soundOption, setSoundOption }) {
             setSoundOption('endingReached');
           } else {
             setSoundOption(event.value);
-            playSound(event.value);
+            playSound(event.value, notificationVolume);
           }
         }}
       />
@@ -36,7 +36,10 @@ function SelectContainer({ soundOption, setSoundOption }) {
 }
 
 const mapStateToProps = state => {
-  return { soundOption: state.settings.soundOption };
+  return {
+    soundOption: state.settings.soundOption,
+    notificationVolume: state.settings.notificationVolume,
+  };
 };
 
 export default connect(mapStateToProps, { setSoundOption })(SelectContainer);
