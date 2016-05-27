@@ -114,7 +114,7 @@ webpackConfig.module.loaders = [
     exclude: /node_modules/,
   },
   {
-    test: /\.(jpg|png)$/,
+    test: /\.(jpg|png|mp3)$/,
     loader: 'file?name=[path][name].[hash].[ext]',
     include: config.paths.src,
   },

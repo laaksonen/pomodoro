@@ -12,7 +12,7 @@ import {
   exitTimer,
   deactivateTimer,
 } from '../timer';
-import { notify } from '../utils/notification';
+import { notify, playSound } from '../utils/notification';
 
 class TimerContainer extends Component {
   constructor() {
@@ -50,6 +50,9 @@ class TimerContainer extends Component {
           notify('Short break ended');
         } else if (timerType === 'longBreak' && this.props.deskTopNotification) {
           notify('Long break ended');
+        }
+        if (this.props.notificationSound) {
+          playSound(this.props.soundOption);
         }
         clearInterval(timeInterval);
         return;
@@ -116,6 +119,8 @@ const mapStateToProps = (state) => {
     isActive: state.timer.isActive,
     isPaused: state.timer.isPaused,
     desktopNotification: state.settings.desktopNotification,
+    notificationSound: state.settings.notificationSound,
+    soundOption: state.settings.soundOption,
     pomodoro: state.settings.pomodoroDuration,
     shortBreak: state.settings.shortBreakDuration,
     longBreak: state.settings.longBreakDuration,
