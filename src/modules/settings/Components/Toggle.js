@@ -6,7 +6,7 @@ export default function Toggle({
   label,
 }) {
   return (
-    <div>
+    <div className="mb3 mt3">
       <input
         type="checkbox"
         checked={desktopNotification}
@@ -22,7 +22,7 @@ export default function Toggle({
           }
         }}
       />
-      {label}
+      &nbsp;{label}
     </div>
   );
 }

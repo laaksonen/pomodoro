@@ -1,10 +1,14 @@
 import React from 'react';
 
-export default function Slider({ duration, setDuration, min, max }) {
+export default function Slider({ title, duration, setDuration, min, max }) {
   return (
-    <div>
+    <div className="mt2 mb2">
+      <span>
+        {title}: {duration}&nbsp;
+        {duration === '1' ? 'minute' : 'minutes'}
+      </span>
       <input
-        style={{ width: '200px' }}
+        style={{ width: '100%', outline: '0' }}
         type="range"
         min={min}
         max={max}
@@ -14,10 +18,6 @@ export default function Slider({ duration, setDuration, min, max }) {
           setDuration(event.target.value);
         }}
       />
-      {duration}
-
-
-
     </div>
   );
 }

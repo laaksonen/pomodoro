@@ -16,25 +16,23 @@ function SilderContainer({
   setLongBreakDuration,
 }) {
   return (
-    <div>
-      <span>Pomodoro</span>
+    <div className="mt4 mb3">
       <Slider
+        title="Pomodoro session"
         duration={pomodoroDuration}
         setDuration={setPomodoroDuration}
         min={15}
         max={90}
       />
-      <br />
-      <span>Short break</span>
       <Slider
+        title="Short break"
         duration={shortBreakDuration}
         setDuration={setShortBreakDuration}
         min={1}
         max={15}
       />
-      <br />
-      <span>Long break</span>
       <Slider
+        title="Long break"
         duration={longBreakDuration}
         setDuration={setLongBreakDuration}
         min={5}

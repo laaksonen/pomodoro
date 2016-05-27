@@ -22,9 +22,7 @@ export default function SettingsContainer({
             <span onClick={() => toggleSettingsPanel()}>×</span>
         </div>
         <ToggleContainer />
-        <br />
         <SelectContainer />
-        <br />
         <SliderContainer />
       </div>
 

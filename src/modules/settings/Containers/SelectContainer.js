@@ -1,25 +1,42 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import Select from 'react-select';
+import { setSoundOption } from '../settings';
+import { playSound } from '../../timer/utils/notification';
 
-function SelectContainer() {
+function SelectContainer({ soundOption, setSoundOption }) {
   const options = [
-    { value: 'one', label: 'One' },
-    { value: 'two', label: 'Two' },
+    { value: 'endingReached', label: 'Ending Reached' },
+    { value: 'hellYeah', label: 'Hell Yeah' },
+    { value: 'theLittleDwarf', label: 'The Little Dwarf' },
+    { value: 'coins', label: 'Coins' },
+    { value: 'solemn', label: 'Solemn' },
+    { value: 'fromTheDarkSide', label: 'From the Dark Side' },
   ];
 
   return (
-    <div>
+    <div className="mt4 mb4">
+      <div className="mb1">Notification sound:</div>
       <Select
         name="someName"
-        value="one"
+        value={soundOption}
         options={options}
-        onChange={() => console.log('Hello')}
+        onChange={(event) => {
+          if (event === null) {
+            setSoundOption('endingReached');
+          } else {
+            setSoundOption(event.value);
+            playSound(event.value);
+          }
+        }}
       />
-
 
     </div>
   );
 }
 
-export default connect()(SelectContainer);
+const mapStateToProps = state => {
+  return { soundOption: state.settings.soundOption };
+};
+
+export default connect(mapStateToProps, { setSoundOption })(SelectContainer);
