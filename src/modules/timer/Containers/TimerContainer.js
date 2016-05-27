@@ -45,11 +45,11 @@ class TimerContainer extends Component {
       } else {
         this.props.timerDone(timerType);
         if (timerType === 'pomodoro' && this.props.desktopNotification) {
-          notify('Pomodoro session complete.');
+          notify('Pomodoro session completed');
         } else if (timerType === 'shortBreak' && this.props.desktopNotification) {
-          notify('Short break ended.');
+          notify('Short break ended');
         } else if (timerType === 'longBreak' && this.props.deskTopNotification) {
-          notify('Long break ended.');
+          notify('Long break ended');
         }
         clearInterval(timeInterval);
         return;

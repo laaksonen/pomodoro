@@ -1,8 +1,10 @@
+import timeIcon from '../../../static/time.png';
+
 export function notify(message) {
   if (!('Notification' in window)) {
-    console.log('This browser does not support desktop notifications');
+    alert('This browser does not support desktop notifications');
   } else if (Notification.permission === 'granted') {
-    const notification = new Notification(message);
+    const notification = new Notification(message, { icon: timeIcon });
   }
 }
 

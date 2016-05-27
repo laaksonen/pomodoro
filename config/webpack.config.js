@@ -113,6 +113,11 @@ webpackConfig.module.loaders = [
     loader: ExtractTextPlugin.extract('style', 'css!sass'),
     exclude: /node_modules/,
   },
+  {
+    test: /\.(jpg|png)$/,
+    loader: 'file?name=[path][name].[hash].[ext]',
+    include: config.paths.src,
+  },
 ];
 
 module.exports = webpackConfig;

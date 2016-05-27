@@ -6,7 +6,6 @@ import SettingsContainer from '../modules/settings/Containers/SettingsContainer.
 import Footer from './Footer';
 import { toggleDesktopNotification } from '../modules/settings/settings';
 
-
 class App extends Component {
   componentWillMount() {
     Notification.requestPermission((permission) => {
