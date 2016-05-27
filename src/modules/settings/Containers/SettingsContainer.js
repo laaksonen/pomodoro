@@ -1,10 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import classNames from 'classnames';
-import { toggleSettingsPanel } from '../settings';
 import ToggleContainer from './ToggleContainer';
 import SelectContainer from './SelectContainer';
 import SliderContainer from './SliderContainer';
+import { toggleSettingsPanel } from '../settings';
 
 export default function SettingsContainer({
   settingsPanelOpen,

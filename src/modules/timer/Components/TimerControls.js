@@ -9,7 +9,6 @@ export default function TimerControls({
   restartTimer,
   exitTimer,
 }) {
-
   const buttonClass = classNames({
     'btn btn-raised-red': timerType === 'pomodoro',
     'btn btn-raised-blue': timerType === 'shortBreak',

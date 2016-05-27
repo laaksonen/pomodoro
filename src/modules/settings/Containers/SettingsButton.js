@@ -11,8 +11,7 @@ class SettingsButton extends Component {
           style={{ cursor: 'pointer' }}
           aria-hidden="true"
           onClick={() => this.props.toggleSettingsPanel()}
-        >
-        </i>
+        />
       </div>
     );
   }

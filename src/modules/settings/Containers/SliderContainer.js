@@ -7,7 +7,7 @@ import {
   setLongBreakDuration,
 } from '../settings';
 import VolumeSlider from '../Components/VolumeSlider';
-import Slider from '../Components/Slider';
+import DurationSlider from '../Components/DurationSlider';
 
 
 function SilderContainer({
@@ -29,26 +29,26 @@ function SilderContainer({
           setNotificationVolume={setNotificationVolume}
         /> : null
       }
-      <Slider
+      <DurationSlider
         title="Pomodoro session"
         duration={pomodoroDuration}
         setDuration={setPomodoroDuration}
         min={15}
         max={90}
       />
-      <Slider
-        title="Short break"
-        duration={shortBreakDuration}
-        setDuration={setShortBreakDuration}
-        min={1}
-        max={15}
+      <DurationSlider
+          title="Short break"
+          duration={shortBreakDuration}
+          setDuration={setShortBreakDuration}
+          min={1}
+          max={15}
       />
-      <Slider
-        title="Long break"
-        duration={longBreakDuration}
-        setDuration={setLongBreakDuration}
-        min={5}
-        max={30}
+      <DurationSlider
+          title="Long break"
+          duration={longBreakDuration}
+          setDuration={setLongBreakDuration}
+          min={5}
+          max={30}
       />
     </div>
   );

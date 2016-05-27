@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Slider({ title, duration, setDuration, min, max }) {
+export default function DurationSlider({ title, duration, setDuration, min, max }) {
   return (
     <div className="mt2 mb2">
       <span>
