@@ -8,7 +8,7 @@ export default function Slider({ title, duration, setDuration, min, max }) {
         {duration === '1' ? 'minute' : 'minutes'}
       </span>
       <input
-        style={{ width: '100%', outline: '0' }}
+        style={{ width: '100%', outline: 0 }}
         type="range"
         min={min}
         max={max}

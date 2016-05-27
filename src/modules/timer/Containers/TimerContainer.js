@@ -52,7 +52,7 @@ class TimerContainer extends Component {
           notify('Long break ended');
         }
         if (this.props.notificationSound) {
-          playSound(this.props.soundOption);
+          playSound(this.props.soundOption, this.props.notificationVolume);
         }
         clearInterval(timeInterval);
         return;
@@ -121,6 +121,7 @@ const mapStateToProps = (state) => {
     desktopNotification: state.settings.desktopNotification,
     notificationSound: state.settings.notificationSound,
     soundOption: state.settings.soundOption,
+    notificationVolume: state.settings.notificationVolume,
     pomodoro: state.settings.pomodoroDuration,
     shortBreak: state.settings.shortBreakDuration,
     longBreak: state.settings.longBreakDuration,

@@ -8,6 +8,7 @@ import SliderContainer from './SliderContainer';
 
 export default function SettingsContainer({
   settingsPanelOpen,
+  notificationSound,
   toggleSettingsPanel,
 }) {
   const settingsContainerClass = classNames(
@@ -22,7 +23,9 @@ export default function SettingsContainer({
             <span onClick={() => toggleSettingsPanel()}>×</span>
         </div>
         <ToggleContainer />
-        <SelectContainer />
+        {notificationSound ?
+          <SelectContainer /> : null
+        }
         <SliderContainer />
       </div>
 
@@ -31,7 +34,10 @@ export default function SettingsContainer({
 }
 
 const mapStateToProps = state => {
-  return { settingsPanelOpen: state.settings.settingsPanelOpen };
+  return {
+    settingsPanelOpen: state.settings.settingsPanelOpen,
+    notificationSound: state.settings.notificationSound,
+  };
 };
 
 export default connect(mapStateToProps, {

@@ -1,22 +1,34 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import {
+  setNotificationVolume,
   setPomodoroDuration,
   setShortBreakDuration,
   setLongBreakDuration,
 } from '../settings';
+import VolumeSlider from '../Components/VolumeSlider';
 import Slider from '../Components/Slider';
 
+
 function SilderContainer({
+  notificationSound,
+  notificationVolume,
   pomodoroDuration,
   shortBreakDuration,
   longBreakDuration,
+  setNotificationVolume,
   setPomodoroDuration,
   setShortBreakDuration,
   setLongBreakDuration,
 }) {
   return (
     <div className="mt4 mb3">
+      {notificationSound ?
+        <VolumeSlider
+          notificationVolume={notificationVolume}
+          setNotificationVolume={setNotificationVolume}
+        /> : null
+      }
       <Slider
         title="Pomodoro session"
         duration={pomodoroDuration}
@@ -44,6 +56,8 @@ function SilderContainer({
 
 const mapStateToProps = state => {
   return {
+    notificationSound: state.settings.notificationSound,
+    notificationVolume: state.settings.notificationVolume,
     pomodoroDuration: state.settings.pomodoroDuration,
     shortBreakDuration: state.settings.shortBreakDuration,
     longBreakDuration: state.settings.longBreakDuration,
@@ -51,6 +65,7 @@ const mapStateToProps = state => {
 };
 
 export default connect(mapStateToProps, {
+  setNotificationVolume,
   setPomodoroDuration,
   setShortBreakDuration,
   setLongBreakDuration,
