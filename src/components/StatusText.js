@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
 
-export default class Navigation extends Component {
+export default class StatusText extends Component {
   renderStatusText() {
     switch (this.props.timerType) {
     case 'pomodoro':
@@ -18,10 +18,8 @@ export default class Navigation extends Component {
   render() {
 
     return (
-      <div className="navigation pa3 f4">
-        <div className="f4 fw7">
-          {this.renderStatusText()}
-        </div>
+      <div className="status-text f3 fw7">
+        {this.renderStatusText()}
       </div>
     );
   }

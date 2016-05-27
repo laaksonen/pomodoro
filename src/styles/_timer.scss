@@ -1,0 +1,14 @@
+.timer-container {
+  position: fixed;
+  width: 270px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.completed-count {
+  position: fixed;
+  bottom: 15px;
+  left: 15px;
+}

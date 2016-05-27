@@ -88,7 +88,7 @@ class TimerContainer extends Component {
 
   render() {
     return (
-      <div>
+      <div className="timer-container">
         {this.props.timerType === 'none' ?
           null :
           <Timer currentTime={this.props.currentTime} />

@@ -5,7 +5,7 @@ import { toggleSettingsPanel } from '../settings';
 class SettingsButton extends Component {
   render() {
     return (
-      <div>
+      <div className="settings-button f3">
         <i
           className="fa fa-cog"
           style={{ cursor: 'pointer' }}

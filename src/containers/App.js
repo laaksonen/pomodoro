@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import classNames from 'classnames';
-import Navigation from '../components/Navigation';
+import StatusText from '../components/StatusText';
 import TimerContainer from '../modules/timer/Containers/TimerContainer';
 import SettingsContainer from '../modules/settings/Containers/SettingsContainer';
-import Footer from '../components/Footer';
 import { toggleDesktopNotification } from '../modules/settings/settings';
+import SettingsButton from '../modules/settings/Containers/SettingsButton.js';
+import CompletedCount from '../modules/timer/Containers/CompletedCount';
+// <Navigation timerType={timerType} />
 
 class App extends Component {
   componentWillMount() {
@@ -28,12 +30,12 @@ class App extends Component {
 
     return (
       <div className={containerClass}>
-        <Navigation timerType={timerType} />
-        <div className="site-content">
-          <TimerContainer />
-        </div>
+        <StatusText timerType={timerType} />
+        <TimerContainer />
         <SettingsContainer />
-        <Footer />
+        <CompletedCount />
+        <SettingsButton />
+
       </div>
     );
   }

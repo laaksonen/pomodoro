@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 class CompletedCount extends Component {
   render() {
-    return <div>Completed: {this.props.completedCount}</div>;
+    return <div className="completed-count f4">Completed: {this.props.completedCount}</div>;
   }
 }
 
