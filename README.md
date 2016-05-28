@@ -1,6 +1,6 @@
 # Pomodoro
 
-[pomodoro.laaksonen.io](pomodoro.laaksonen.io) **(Live application)**
+[pomodoro.laaksonen.io](http://pomodoro.laaksonen.io) **(Live application)**
 
 Pomodoro is a time management application that is based on the
 [pomodoro technique](https://en.wikipedia.org/wiki/Pomodoro_Technique), a
