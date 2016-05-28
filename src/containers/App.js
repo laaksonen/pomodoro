@@ -7,7 +7,6 @@ import SettingsContainer from '../modules/settings/Containers/SettingsContainer'
 import { toggleDesktopNotification } from '../modules/settings/settings';
 import SettingsButton from '../modules/settings/Containers/SettingsButton.js';
 import CompletedCount from '../modules/timer/Containers/CompletedCount';
-// <Navigation timerType={timerType} />
 
 class App extends Component {
   componentWillMount() {
@@ -35,7 +34,6 @@ class App extends Component {
         <SettingsContainer />
         <CompletedCount />
         <SettingsButton />
-
       </div>
     );
   }

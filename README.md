@@ -2,7 +2,7 @@
 
 [pomodoro.laaksonen.io](http://pomodoro.laaksonen.io) **(Live application)**
 
-Pomodoro is a time management application that is based on the
+*Pomodoro* is a time management application based on the
 [pomodoro technique](https://en.wikipedia.org/wiki/Pomodoro_Technique), a
 technique based on the idea of frequent short breaks to improve mental agility.
 
